@@ -1,5 +1,7 @@
 package ohtu.intjoukkosovellus;
 
+import java.util.Arrays;
+
 public class IntJoukko {
 
     public final static int KAPASITEETTI = 5, OLETUSKASVATUS = 5;
@@ -34,10 +36,10 @@ public class IntJoukko {
         if (kuuluu(luku)) {
             return false;
         }
-        
+
         ljono[alkioidenLkm] = luku;
         alkioidenLkm++;
-        
+
         if (alkioidenLkm % ljono.length == 0) {
             int[] uusi = new int[alkioidenLkm + kasvatuskoko];
             kopioiTaulukko(ljono, uusi);
@@ -67,14 +69,14 @@ public class IntJoukko {
 
         return false;
     }
-    
+
     private void siirraAlkioitaVasemmalle(int kohta) {
         int edellinen;
         for (int j = kohta; j < alkioidenLkm - 1; j++) {
-                edellinen = ljono[j];
-                ljono[j] = ljono[j + 1];
-                ljono[j + 1] = edellinen;
-            }
+            edellinen = ljono[j];
+            ljono[j] = ljono[j + 1];
+            ljono[j + 1] = edellinen;
+        }
     }
 
     private void kopioiTaulukko(int[] vanha, int[] uusi) {
@@ -108,6 +110,7 @@ public class IntJoukko {
 
     public static IntJoukko yhdiste(IntJoukko a, IntJoukko b) {
         IntJoukko tulos = new IntJoukko(a.mahtavuus() + b.mahtavuus());
+        
         int[] aTaulu = a.toIntArray();
         int[] bTaulu = b.toIntArray();
         for (int i = 0; i < aTaulu.length; i++) {
@@ -121,14 +124,14 @@ public class IntJoukko {
 
     public static IntJoukko leikkaus(IntJoukko a, IntJoukko b) {
         IntJoukko tulos = new IntJoukko(a.mahtavuus() + b.mahtavuus());
-        int[] aTaulu = a.toIntArray();
-        int[] bTaulu = b.toIntArray();
-        for (int i = 0; i < aTaulu.length; i++) {
-            for (int j = 0; j < bTaulu.length; j++) {
-                if (aTaulu[i] == bTaulu[j]) {
-                    tulos.lisaa(bTaulu[j]);
-                }
-            }
+
+        int[] tulokset = Arrays.stream(a.toIntArray())
+                .distinct()
+                .filter(x -> Arrays.stream(b.toIntArray()).anyMatch(y -> y == x))
+                .toArray();
+
+        for (int i = 0; i < tulokset.length; i++) {
+            tulos.lisaa(tulokset[i]);
         }
         return tulos;
 
@@ -148,5 +151,6 @@ public class IntJoukko {
 
         return tulos;
     }
+
 
 }
