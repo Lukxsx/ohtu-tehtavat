@@ -1,0 +1,5 @@
+Käytimme ryhmämme retrospektiivissä Start, Stop, Continue, More of, Less of Wheel tekniikkaa. Toteutimme sen verkossa ohjaajan/asiakkaan ohjeistuksella. Teimme muistilaput, joissa luki “start”, “stop”, “continue”, “more” ja “less”. Saimme 5 minuuttia aikaa, jonka aikana jokainen ryhmäläinen sai kirjoittaa sopivien lappujen alle mietteitään kuluneesta viikosta. Kirjoitukset tehtiin anonyymisti. Viiden minuutin kuluttua kävimme yhdessä läpi kohdat. Mietimme sen jälkeen kyseisten kirjoitusten perusteella ryhmässämme, että mitä tekisimme seuraavalla viikolla paremmin. 
+
+Ryhmässämme tuli palautetta mm. ryhmän keskeisestä kommunikoinnista. Sovimme että mahdollisien ongelmien tai epäselvien hetkien kohdalla pitäisi heti kysyä apua muilta ryhmämme Discordissa. Huomioita tuli myös tehtävienjaosta. Jatkossa tulisi myös jakaa tehtäviä paremmin ryhmäläisten kesken, ensimmäisellä viikolla oli joitakin epäselvyyksiä niissä.  
+
+Puhuimme myös koodin asettelusta ja laadusta. Päädyimme siihen, että ottaisimme Checktylen käyttöön projektissamme. Mietimme esim. tabejen vs. välilyöntien käyttöä koodissa. 
